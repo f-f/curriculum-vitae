@@ -1,0 +1,145 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in, top=0in, bottom=0in, nomarginpar]{geometry}
+\usepackage{chngcntr}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}% T1 is a much better choice of encoding than the default
+\usepackage{fontawesome}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{array}
+\usepackage{etoolbox}
+\usepackage{colortbl}
+\usepackage[svgnames]{xcolor}
+\usepackage{makecell}
+\usepackage{fontspec}
+\usepackage{hyperref}
+
+% Random settings
+\counterwithin{table}{section}
+%\pagenumbering{gobble} % switch off page numbers
+\defaultfontfeatures{LetterSpace=-6} % less spacing between letters
+\AtBeginEnvironment{tabularx}{\setmainfont{Helvetica Neue Light}}%
+
+% Specify different font for section headings
+\newfontfamily\headingfont[]{Helvetica Neue}
+\titleformat*{\section}{\LARGE\headingfont}
+\titleformat*{\subsection}{\Large\headingfont}
+\titleformat*{\subsubsection}{\large\headingfont}
+\renewcommand{\maketitlehooka}{\headingfont}
+
+% Macros for tables
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% Macro for section titles + icon
+% the trick here for minipage is: align the page to the baseline, then define the height (in pt), and then align the text inside to the top
+\newcommand{\sectionTitle}[2]{\section*{#1 \hspace{1mm} {\small \begin{minipage}[b][10.5pt][t]{2cm}#2\end{minipage}}}}
+
+% Macro for the Personal Data table: icon + info
+\newcommand{\personalData}[2]{#2 \hspace{0.7mm} #1}
+
+% Macros for text formatting
+\newcommand{\locationRight}[1]{\hfill {\footnotesize \textcolor{gray}{#1}}}
+
+
+
+
+\begin{document}
+
+% header section: title and subtitle
+\title{{\Huge Curriculum Vitae} \\ {\large of} \\ {\Huge Fabrizio Ferrai}  \\ \vspace{2 mm} {\small Computer Science Engineering Student}}
+\predate{}
+\postdate{}
+\date{}
+\preauthor{}
+\postauthor{}
+\author{}
+\maketitle
+
+% SECTION: PERSONAL DATA
+\sectionTitle{Personal Data \& Contact}{\faUser \hspace{0.5mm} \faPencil}
+
+\noindent % needed if the tabularx environment isn't encased in a table environment
+\begin{tabularx}{\textwidth}{ C{0.5cm} *{2}{X}}
+	&
+	\personalData{Address: Viale Lucania 24, Milan, 20139, IT}{\faHome} &
+	\personalData{E-mail: \href{mailto:fabrizio.ferrai@gmail.com}{fabrizio.ferrai@gmail.com}}{\faEnvelope} \vspace{2 mm}\\
+	&
+	\personalData{Citizenship: Italian}{\faFlag} &
+	\personalData{Website: \url{http://ferrai.io}}{\faGlobe} \vspace{2 mm}\\
+	&
+	\personalData{Telephone: +39 346 1606010}{\faPhone} &
+	\personalData{Github profile: \url{http://github.com/ff-}}{\faGithubAlt} \vspace{2 mm}\\
+	% date of birth? linkedin?
+\end{tabularx}
+\vspace{2 mm}
+
+% SECTION: EDUCATION
+\sectionTitle{Education}{\faBook}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& 2014 - ? & \textbf{Master} of Computer Science Engineering \locationRight{Politecnico di Milano, Italy} \vspace{5 mm}\\
+	& 2011 - 2014 & \textbf{Bachelor} of Engineering of Computing Systems \locationRight{Politecnico di Milano, Italy} \vspace{2 mm}\\
+	&			  & \hspace{5mm} \emph{\normalsize Grade: 97/110 \vspace{3 mm}}\\
+	& 2006 - 2011 & Science High School \textbf{Diploma} \locationRight{2nd Level College of Science "L. Mossa", Olbia, Italy} \vspace{2 mm}\\
+	&			  & \hspace{5mm} \emph{\normalsize Grade: 100/100 }\\
+	&			  & \hspace{5mm} \emph{\normalsize Thesis: "The Evolution of Computing Machines" \vspace{2 mm}} \\
+\end{tabularx}
+
+% SECTION: EXPERIENCE
+\sectionTitle{Experience}{\faBriefcase}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& 2013 - 2015 & \textbf{Nuvola Srls}\locationRight{Milan, Italy} \vspace{2 mm}\\
+	&			  & \hspace{5mm} \emph{\normalsize Position: Software Engineer \vspace{3 mm}}\\
+	& 2010 - Actual & \textbf{Frontend Software Engineering Consultant} \locationRight{Milan, Italy} \vspace{2 mm}\\
+	&			  & \hspace{5mm} {\normalsize \emph{Notable works:} \url{http://sysdig.org}, \url{https://poul.org} \vspace{2 mm}} \\
+\end{tabularx}
+
+% SECTION: PAPERS
+%\sectionTitle{Academic Papers}{\faBeaker}
+
+% SECTION: PROGRAMMING
+\sectionTitle{Programming \& Technologies}{\faMagic \hspace{0.5mm} \faLaptop}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& Proficient in: & \emph{Javascript, Python, Racket, Java, Go, HTML5\&CSS3} \vspace{2 mm}\\
+	& Familiar with: & \emph{Bash, Vala, SQL, C, C++, PHP, \LaTeX, Ruby, Haskell} \vspace{2 mm}\\
+	& Tech I use/love: & \emph{Linux, Ubuntu, Debian, Duplicity, Nginx, Django, Atom, Docker, Vagrant, LXC, Flask, AngularJS, Bootstrap3, jQuery, LyX, ...}\\
+\end{tabularx}
+
+\newgeometry{margin=0.5in, top=0.5in, bottom=0in, nomarginpar}
+
+% SECTION: LANGUAGES
+\sectionTitle{Spoken Languages}{\faComments}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& \textbf{Italian}: & Mother Tongue \vspace{2 mm}\\
+	& \textbf{English}: & C2 Level. Certification: TOEIC, July 2014 (Score: 955/990) \vspace{2 mm}\\
+	& \textbf{German}: & A2 Level \vspace{2 mm}\\
+\end{tabularx}
+
+% SECTION: INTERESTS
+\sectionTitle{Interests, Memberships \& Achievements}{\faHeart \hspace{0.5mm} \faStar \hspace{0.5mm} \faTrophy}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& \textbf{POuL}: & current President of Politecnico Open unix Labs (\url{https://poul.org}), an association of Politecnico di Milano students interested in Linux, hacking and FOSS. \vspace{2 mm}\\
+	& \textbf{ToH}: & active member of the "Tower of Hanoi", the Politecnico di Milano Computer Security Team, which main activities include partecipating in international CTFs (Capture The Flag) competitions, and organize the PoliCTF. \vspace{2 mm}\\
+	& \textbf{Mensa}: & member of Mensa Italy since 2014 (\url{https://mensa.org}) \vspace{2 mm}\\
+\end{tabularx}
+
+\end{document} 
+
