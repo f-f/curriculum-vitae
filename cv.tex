@@ -60,7 +60,7 @@
 \maketitle
 
 % SECTION: PERSONAL DATA
-\sectionTitle{Personal Data \& Contact}{\faUser \hspace{0.5mm} \faPencil}
+\sectionTitle{Personal Data \& Contact}{\faPencil}
 
 \noindent % needed if the tabularx environment isn't encased in a table environment
 \begin{tabularx}{\textwidth}{ C{0.5cm} *{2}{X}}
@@ -76,6 +76,15 @@
 	% date of birth? linkedin?
 \end{tabularx}
 \vspace{2 mm}
+
+% SECTION: BIO
+\sectionTitle{Short Bio}{\faUser}
+
+\noindent
+\large
+\begin{tabularx}{\textwidth}{ L{18cm} }
+	I am a Computer Science Engineering Student at Politecnico di Milano, Italy. Actually my main interests are: \emph{cryptography, computer security and web technologies.} My greatest passion, as a curious being, is to \emph{learn new things}, constantly. \\
+\end{tabularx}
 
 % SECTION: EDUCATION
 \sectionTitle{Education}{\faBook}
@@ -106,6 +115,8 @@
 % SECTION: PAPERS
 %\sectionTitle{Academic Papers}{\faBeaker}
 
+\newgeometry{margin=0.5in, top=0.5in, bottom=0in, nomarginpar}
+
 % SECTION: PROGRAMMING
 \sectionTitle{Programming \& Technologies}{\faMagic \hspace{0.5mm} \faLaptop}
 
@@ -114,10 +125,8 @@
 \begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
 	& Proficient in: & \emph{Javascript, Python, Racket, Java, Go, HTML5\&CSS3} \vspace{2 mm}\\
 	& Familiar with: & \emph{Bash, Vala, SQL, C, C++, PHP, \LaTeX, Ruby, Haskell} \vspace{2 mm}\\
-	& Tech I use/love: & \emph{Linux, Ubuntu, Debian, Duplicity, Nginx, Django, Atom, Docker, Vagrant, LXC, Flask, AngularJS, Bootstrap3, jQuery, LyX, ...}\\
+	& Tech I use/love: & \emph{Linux, Ubuntu, Debian, Duplicity, Nginx, Docker, Vagrant, LXC, MySQL, PostgreSQL, Flask, Django, AngularJS, BackboneJS, Bootstrap3, jQuery, LyX, Atom, ...}\\
 \end{tabularx}
-
-\newgeometry{margin=0.5in, top=0.5in, bottom=0in, nomarginpar}
 
 % SECTION: LANGUAGES
 \sectionTitle{Spoken Languages}{\faComments}
@@ -136,6 +145,7 @@
 \noindent
 \large
 \begin{tabularx}{\textwidth}{ C{0.5cm} L{3cm} *{1}{X}}
+	& \textbf{Snake.li}: & contributor of Snake (\url{https://snake.li}) a privacy-aware, end-to-end encrypted social network. \vspace{2 mm}\\
 	& \textbf{POuL}: & current President of Politecnico Open unix Labs (\url{https://poul.org}), an association of Politecnico di Milano students interested in Linux, hacking and FOSS. \vspace{2 mm}\\
 	& \textbf{ToH}: & active member of the "Tower of Hanoi", the Politecnico di Milano Computer Security Team, which main activities include partecipating in international CTFs (Capture The Flag) competitions, and organize the PoliCTF. \vspace{2 mm}\\
 	& \textbf{Mensa}: & member of Mensa Italy since 2014 (\url{https://mensa.org}) \vspace{2 mm}\\
