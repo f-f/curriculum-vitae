@@ -1,12 +1,20 @@
 # My Curriculum Vitae
 
-##Dependencies:
-* Helvetica Neue font (you can change it as you wish)
+## (Incomplete) Debian/Ubuntu Dependencies:
 
-###TODO: implement parametric font
-
-##Compile with:
+- Get Montserrat font somewhere (e.g. Google Fonts)
+- Install latex and then fontawesome:
 
 ```bash
-xetex cv.tex
+# FIXME: latex install
+# TODO: Dockerfile?
+sudo apt-get install xzdec
+tlmgr init-usertree
+tlmgr install fontawesome
+```
+
+## Compile with:
+
+```bash
+lualatex cv.tex
 ```
