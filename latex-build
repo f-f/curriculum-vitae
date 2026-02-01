@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker run --rm -i --net=none -v "$PWD":/data nilrecurring/latex-gfonts "$@"
+docker run --rm -i --net=none -v "$PWD":/data nilrecurring/latex-gfonts "$@"
